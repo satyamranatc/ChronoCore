@@ -1,0 +1,68 @@
+nav 
+{
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(8, 9, 9);
+    color: white;
+}
+
+
+#LogoSection
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: .2rem;
+}
+
+
+#SearchBar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .6rem;
+    width: 45%;
+    position: relative;
+}
+
+#SearchBar input
+{
+    width: 100%;
+    padding: .5rem 1rem;
+    border: 1px solid gray;
+    border-radius: 8px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+#SearchIcon
+{
+    position: absolute;
+    right: 10px;
+    color: black;
+}
+
+nav ul
+{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    column-gap: 30px;
+}
+
+nav ul li
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
