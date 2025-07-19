@@ -1,13 +1,26 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+import axios from 'axios'
 
 export default function ListOfEmployees() {
+
+  let [allEmployees,setAllEmployees] = useState([]);
+
+  useEffect(()=>{
+    async function getAllEmployees()
+    {
+      let res = await axios.get("http://localhost:5500/api/employee/list");
+      setAllEmployees(res.data);
+    }
+    getAllEmployees();
+  },[])
+
   return (
     <div>
         <table>
           <thead>
             <tr>
               <th>Name</th>
-              <th>Email</th>
+              <th>Profile</th>
               <th>Role</th>
               <th>Department</th>
               <th>Salary</th>
@@ -17,15 +30,21 @@ export default function ListOfEmployees() {
           </thead>
 
           <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>0V4d0@example.com</td>
-              <td>Manager</td>
-              <td>HR</td>
-              <td>$50,000</td>
-              <td><button>Edit</button></td>
-              <td><button>Delete</button></td>
-            </tr>
+            {
+              allEmployees.map((emp)=>{
+                return (
+                  <tr key={emp._id}>
+                    <td>{emp.EmployeeName}</td>
+                    <td><img src={emp.EmployeePoster} alt="" /></td>
+                    <td>{emp.EmployeeJobRole}</td>
+                    <td>{emp.EmployeeDep}</td>
+                    <td>{emp.EmployeeSalary}</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
 
         </table>

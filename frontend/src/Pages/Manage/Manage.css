@@ -1,266 +1,394 @@
-
-
-
 /* Section Styles */
 section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Header Section */
 section:first-child {
   text-align: center;
-  padding: 3rem 0;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 3rem;
+  padding: 4rem 2rem;
+  background: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+section:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4f46e5, transparent);
 }
 
 h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-  animation: textGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes textGlow {
-  0% { filter: brightness(1); }
-  100% { filter: brightness(1.2); }
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 p {
-  font-size: 1.2rem;
-  color: #ccc;
+  font-size: 1.125rem;
+  color: #a1a1aa;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* Add Employee Button Section */
 section:nth-child(2) {
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  border-radius: 12px;
 }
 
+/* Base Button Styles */
 button {
-  padding: 15px 30px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: bold;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  overflow: hidden;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+}
+
+button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
 }
 
 /* Add Employee Button */
 section:nth-child(2) button {
-  background: linear-gradient(45deg, #00ffff, #0099cc);
-  color: #000;
-  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
-  transform: perspective(1px) translateZ(0);
+  background: #4f46e5;
+  color: #ffffff;
+  padding: 16px 32px;
+  font-size: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+section:nth-child(2) button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+section:nth-child(2) button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* Table Section */
 section:nth-child(3) {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem;
+  background: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  padding: 1.5rem;
   overflow: hidden;
+}
+
+section:nth-child(3) h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #2d2d2d;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 15px;
+  background: #1e1e1e;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2d2d2d;
 }
 
 thead {
-  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
-  backdrop-filter: blur(10px);
+  background: #262626;
 }
 
 th {
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   text-align: left;
-  font-weight: bold;
-  color: #00ffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
-  position: relative;
+  font-weight: 600;
+  color: #e5e5e5;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #2d2d2d;
+  white-space: nowrap;
 }
 
+th:first-child {
+  padding-left: 1.5rem;
+}
 
+th:last-child {
+  padding-right: 1.5rem;
+  text-align: center;
+}
 
 tbody tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
+  border-bottom: 1px solid #2d2d2d;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
 }
 
 tbody tr:hover {
-  background: rgba(0, 255, 255, 0.05);
-  transform: translateX(5px);
-}
-
-tbody tr:hover:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #00ffff, #ff00ff);
-  border-radius: 0 2px 2px 0;
+  background: #262626;
 }
 
 td {
-  padding: 1.2rem 1rem;
+  padding: 1rem;
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   vertical-align: middle;
+  transition: 0.3s;
+}
+
+td img
+{
+  cursor: pointer;
+  transition: 0.5s;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+td img:hover
+{
+  border-radius: 5%;
+  transform: scale(2);
+}
+
+td:first-child {
+  padding-left: 1.5rem;
+  font-weight: 500;
+}
+
+td:last-child {
+  padding-right: 1.5rem;
+  text-align: center;
 }
 
 /* Table Button Styles */
 td button {
-  padding: 8px 16px;
-  margin: 0 4px;
-  border-radius: 25px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  padding: 6px 12px;
+  margin: 0 2px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  min-width: 60px;
+  height: 32px;
 }
 
 /* Edit Button */
 td button:first-child {
-  background: linear-gradient(45deg, #ffff00, #ff9900);
-  color: #000;
-  box-shadow: 0 4px 15px rgba(255, 255, 0, 0.3);
+  background: #059669;
+  color: #ffffff;
+  border: 1px solid #047857;
 }
 
+td button:first-child:hover {
+  background: #047857;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
 
 /* Delete Button */
 td button:last-child {
-  background: linear-gradient(45deg, #ff0066, #cc0044);
+  background: #dc2626;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(255, 0, 102, 0.3);
+  border: 1px solid #b91c1c;
 }
 
 td button:last-child:hover {
-  transform: translateY(-2px) scale(1.1);
-  box-shadow: 0 6px 20px rgba(255, 0, 102, 0.4);
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
 }
 
-/* Button Ripple Effect */
-td button:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
+/* Secondary/Neutral Button Variant */
+.btn-secondary {
+  background: #374151;
+  color: #ffffff;
+  border: 1px solid #4b5563;
+}
+
+.btn-secondary:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+}
+
+.empty-state h3 {
+  color: #9ca3af;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #374151;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
+  border-top-color: #4f46e5;
+  animation: spin 1s ease-in-out infinite;
 }
 
-td button:active:before {
-  width: 300px;
-  height: 300px;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  div {
-    padding: 1rem;
+  section:first-child {
+    padding: 2rem 1rem;
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   p {
     font-size: 1rem;
   }
   
+  section:nth-child(2),
+  section:nth-child(3) {
+    margin: 0 1rem 2rem;
+    padding: 1rem;
+  }
+  
   table {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   
   th, td {
-    padding: 0.8rem 0.5rem;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  th:first-child, td:first-child {
+    padding-left: 1rem;
+  }
+  
+  th:last-child, td:last-child {
+    padding-right: 1rem;
   }
   
   td button {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    margin: 2px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    min-width: 50px;
+    height: 28px;
+    margin: 1px;
   }
 }
 
-@media (max-width: 480px) {
-  table {
-    display: block;
-    overflow-x: auto;
+@media (max-width: 640px) {
+  /* Stack table buttons vertically on very small screens */
+  td:last-child {
     white-space: nowrap;
   }
   
-  th, td {
-    min-width: 120px;
+  td button {
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+    min-width: auto;
+  }
+  
+  /* Make table scrollable horizontally */
+  section:nth-child(3) {
+    overflow-x: auto;
+  }
+  
+  table {
+    min-width: 600px;
   }
 }
 
-/* Scrollbar Styling */
+/* Custom Scrollbar for Dark Theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  background: #4b5563;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ff00ff, #ffff00);
+  background: #6b7280;
 }
 
-/* Loading Animation for Table */
-table {
-  animation: fadeInUp 0.8s ease-out;
+/* Focus and accessibility improvements */
+table:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: -2px;
 }
 
-@keyframes fadeInUp {
+/* Striped rows for better readability */
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:nth-child(even):hover {
+  background: #262626;
+}
+
+/* Animation for new rows */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -268,15 +396,6 @@ table {
   }
 }
 
-/* Hover Effects for Table Rows */
-tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-tbody tr:nth-child(odd):hover {
-  background: rgba(0, 255, 255, 0.08);
-}
-
-tbody tr:nth-child(even):hover {
-  background: rgba(255, 0, 255, 0.08);
+.new-row {
+  animation: fadeIn 0.3s ease-out;
 }
